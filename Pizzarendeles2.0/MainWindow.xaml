@@ -1,0 +1,49 @@
+﻿<Window x:Class="Pizzarendeles2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pizzarendeles2._0"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FFDBA87F">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Background="#FFF5AC3F">
+            <StackPanel >
+                <TextBlock Text="Pizza Választása:"/>
+                <ListBox x:Name="lbox_pizzak" SelectionChanged="Kivalasztas" VerticalAlignment="Center"/>
+                <Button x:Name="btn_torles" Content="Törlés" Click="Btn_torles_Click"/>
+
+                <TextBox x:Name="tb_pizza_felirat"/>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Pizza Mérete:"/>
+            <ListBox x:Name="lbox_meretek" SelectionChanged="MeretKivalasztas"/>
+            <TextBox x:Name="tb_meret_felirat"/>
+            <Button x:Name="btn_megrendeles" Content="Megrendelés" Click="btn_megrendeles_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="Rendelések:"/>
+            <ListBox x:Name="lbox_megrendelesek"/>
+            <Button x:Name="btn_rendeles_torles" Content="Rendelés törlése" Click="btn_rendeles_torles_Click"/>
+            <Button x:Name="btn_osszes_torles" Content="Összes rendelés törlése" Click="btn_osszes_torles_Click"/>
+            <TextBox x:Name="tb_rendelesek_szama" Text="Rendelések száma: 0"/>
+
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <TextBlock Text="Pizza keresése:"/>
+            <TextBox x:Name="tb_pizza_kereses"/>
+            <Button x:Name="btn_kereses" Content="Keresés" Click="btn_kereses_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
