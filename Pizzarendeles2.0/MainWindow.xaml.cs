@@ -124,17 +124,25 @@ namespace Pizzarendeles2._0
 
         private void btn_kereses_Click(object sender, RoutedEventArgs e)
         {
-            List<string> talalatok = new List<string> {};
+            List<string> talalatok = new List<string> { };
             string keresett = tb_pizza_kereses.Text.ToLower();
-            for (int i = 0; i < pizzak.Count; i++)
+            if (keresett != "")
             {
-                if (pizzak[i].ToLower().Contains(keresett))
+                for (int i = 0; i < pizzak.Count; i++)
                 {
-                    talalatok.Add(pizzak[i]);
+                    if (pizzak[i].ToLower().Contains(keresett))
+                    {
+                        talalatok.Add(pizzak[i]);
+                    }
                 }
+                string kimenet = string.Join(", ", talalatok);
+                MessageBox.Show($"A keresett pizza megtalálható: {kimenet}", "Keresés", MessageBoxButton.OK, MessageBoxImage.Information);
+
             }
-            string kimenet = string.Join(", ", talalatok);
-            MessageBox.Show($"A keresett pizza megtalálható: {kimenet}", "Keresés", MessageBoxButton.OK, MessageBoxImage.Information);
+            else if (keresett == null || keresett == "")
+            {
+                MessageBox.Show("Kérlek adj meg egy keresendő szöveget", "Keresés", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }
