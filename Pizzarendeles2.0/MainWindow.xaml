@@ -17,33 +17,42 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Column="0" Background="#FFF5AC3F">
+        <Grid Grid.Column="0" Background="#FFF5AC3F" Grid.ColumnSpan="2" Margin="0,0,256,-335" Grid.RowSpan="3">
             <StackPanel >
-                <TextBlock Text="Pizza Választása:"/>
-                <ListBox x:Name="lbox_pizzak" SelectionChanged="Kivalasztas" VerticalAlignment="Center"/>
-                <Button x:Name="btn_torles" Content="Törlés" Click="Btn_torles_Click"/>
+                <TextBlock Text="Pizza Választása" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                <ListBox x:Name="lbox_pizzak" SelectionChanged="Kivalasztas" VerticalAlignment="Center" Background="#d52518" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold"/>
+                <Button x:Name="btn_torles" Content="Törlés" Click="Btn_torles_Click" Background="#D63E12" Foreground="White" FontWeight="Black" BorderBrush="#D63E12" Width="120" Margin="0,5,0,5"/>
 
-                <TextBox x:Name="tb_pizza_felirat"/>
+                <TextBox x:Name="tb_pizza_felirat" Background="#d52518" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" Width="200"/>
             </StackPanel>
         </Grid>
-        <StackPanel Grid.Row="2" Grid.Column="0">
-            <TextBlock Text="Pizza Mérete:"/>
-            <ListBox x:Name="lbox_meretek" SelectionChanged="MeretKivalasztas"/>
-            <TextBox x:Name="tb_meret_felirat"/>
-            <Button x:Name="btn_megrendeles" Content="Megrendelés" Click="btn_megrendeles_Click"/>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Margin="0,200,256,-240">
+            <TextBlock Text="Pizza Mérete"  HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+            <ListBox x:Name="lbox_meretek" SelectionChanged="MeretKivalasztas" Background="#d52518" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold"/>
+            <TextBox x:Name="tb_meret_felirat" Background="#d52518" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" Width="200"/>
+            <Button x:Name="btn_megrendeles" Content="Megrendelés" Click="btn_megrendeles_Click" Background="#D63E12" Foreground="White" FontWeight="Black" BorderBrush="#D63E12" Width="120" Margin="0,5,0,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <TextBlock Text="Rendelések:"/>
-            <ListBox x:Name="lbox_megrendelesek"/>
-            <Button x:Name="btn_rendeles_torles" Content="Rendelés törlése" Click="btn_rendeles_torles_Click"/>
-            <Button x:Name="btn_osszes_torles" Content="Összes rendelés törlése" Click="btn_osszes_torles_Click"/>
-            <TextBox x:Name="tb_rendelesek_szama" Text="Rendelések száma: 0"/>
 
-        </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="2">
-            <TextBlock Text="Pizza keresése:"/>
-            <TextBox x:Name="tb_pizza_kereses"/>
-            <Button x:Name="btn_kereses" Content="Keresés" Click="btn_kereses_Click"/>
-        </StackPanel>
+        <Grid Grid.Column="1" Background="#FF6106" Grid.ColumnSpan="2" Margin="0,0,256,-335" Grid.RowSpan="3">
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Rendelések"  HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                <ListBox x:Name="lbox_megrendelesek" Background="#d52518" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold"/>
+                <Button x:Name="btn_rendeles_torles" Content="Rendelés törlése" Click="btn_rendeles_torles_Click" Background="#D63E12" Foreground="White" FontWeight="Black" BorderBrush="#D63E12" Width="120"/>
+                <Button x:Name="btn_osszes_torles" Content="Összes rendelés törlése" Click="btn_osszes_torles_Click" Background="#D63E12" Foreground="White" FontWeight="Black" BorderBrush="#D63E12" Width="150" Margin="0,5,0,5"/>
+                <TextBox x:Name="tb_rendelesek_szama" Text="Rendelések száma: 0" Background="#FFFF6106" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold"/>
+
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="2" Background="#52AA24" Margin="0,0,0,-335" Grid.RowSpan="3" HorizontalAlignment="Center" Width="257">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="91*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.RowSpan="2">
+                <TextBlock Text="Pizza keresése" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold"/>
+                <TextBox x:Name="tb_pizza_kereses" Background="#d52518" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" Width="200"/>
+                <Button x:Name="btn_kereses" Content="Keresés" Click="btn_kereses_Click" Background="#D63E12" Foreground="White" FontWeight="Black" BorderBrush="#D63E12" Width="120" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
